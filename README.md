@@ -21,14 +21,14 @@ Eine Library, um Umlaute aus einem Textfile richtig auszulesen
        
     Main:
     def main():
-    """
+        """
 
-    : -> to test the class Encode_umlauts()
-    """
-    data = open('text_file.txt', 'r')
-    string = data.read()
-    data.close()
-    encoded = Encode_umlauts(string)
-    print('with encode: \n', encoded.encode())
+        : -> to test the class Encode_umlauts()
+        """
+        data = open('text_file.txt', 'r')
+        string = data.read()
+        data.close()
+        encoded = Encode_umlauts(string)
+        print('with encode: \n', encoded.encode())
 
-    return 0
+        return 0
