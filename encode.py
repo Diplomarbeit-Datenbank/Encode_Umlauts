@@ -82,6 +82,7 @@ def main():
     string = data.read()
     data.close()
     encoded = Encode_umlauts(string)
+    print('with no encode:', string)
     print('with encode: \n', encoded.encode())
 
     return 0
