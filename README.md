@@ -1,5 +1,6 @@
 # Encode_Umlauts
-![image](https://user-images.githubusercontent.com/87471423/127822984-3d1ac518-224d-432c-ad97-cbd4602ef8c0.png)
+![image](https://user-images.githubusercontent.com/87471423/127839447-7370c716-d61e-472e-a278-27cf95b26392.png)
+
 
 Eine Library, um Umlaute aus einem Textfile richtig auszulesen
 
