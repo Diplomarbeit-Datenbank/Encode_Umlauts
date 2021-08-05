@@ -1,5 +1,5 @@
 """
-    This file is to decode umlauts from a file
+    This file is to encode umlauts from a file
     Exchange:
         -  'ÃŸ' -> ß
         -  'Ã„' -> Ä
