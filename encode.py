@@ -1,5 +1,5 @@
 """
-    This file is to encode umlauts from a file
+    This file is to decode umlauts from a file
     Exchange:
         -  'ÃŸ' -> ß
         -  'Ã„' -> Ä
@@ -8,6 +8,15 @@
         -  'Ã¼' -> ü
         -  'Ã–' -> Ö
         -  'Ã¶' -> ö
+
+        -  'Ue' -> Ü
+        -  'ue' -> ü
+        -  'Oe' -> Ö
+        -  'oe' -> ö
+        -  'Ae' -> Ä
+        -  'ae' -> ä
+        -  'ss' -> ß
+
 
     Just put the output from the text file into the class and get the encoded string with the function .encode() back
 
@@ -64,8 +73,8 @@ class Encode_umlauts:
 
         :return: the new encoded words with the right umlauts
         """
-        umlaut_codes = ['ÃŸ', 'Ã„', 'Ã¤', 'Ãœ', 'Ã¼', 'Ã–', 'Ã¶']
-        refactor_letters = ['ß', 'Ä', 'ä', 'Ü', 'ü', 'Ö', 'ö']
+        umlaut_codes = ['ÃŸ', 'Ã„', 'Ã¤', 'Ãœ', 'Ã¼', 'Ã–', 'Ã¶', 'Ae', 'ae', 'Ue', 'ue', 'Oe', 'oe']
+        refactor_letters = ['ß', 'Ä', 'ä', 'Ü', 'ü', 'Ö', 'ö', 'Ä', 'ä', 'Ü', 'ü', 'Ö', 'ö']
         for refactor_letter, umlaut_code in zip(refactor_letters, umlaut_codes):
             if self.string.find(umlaut_code) != -1:
                 self.string = self.refactor(self.get_all(umlaut_code), refactor_letter)  # refactor the string
@@ -78,11 +87,10 @@ def main():
 
     : -> to test the class Encode_umlauts()
     """
-    data = open('text_text_file.txt', 'r')
+    data = open('text_file.txt', 'r')
     string = data.read()
     data.close()
     encoded = Encode_umlauts(string)
-    print('with no encode:', string)
     print('with encode: \n', encoded.encode())
 
     return 0
