@@ -60,6 +60,26 @@ class Encode_umlauts:
 
         return ''.join(string_list)  # join the single letters
 
+    def rebuild(self, word):
+        umlaut_codes = ['ÃŸ', 'Ã„', 'Ã¤', 'Ãœ', 'Ã¼', 'Ã–', 'Ã¶', 'Ae', 'ae', 'Ue', 'ue', 'Oe', 'oe']
+        refactor_letters = ['ß', 'Ä', 'ä', 'Ü', 'ü', 'Ö', 'ö', 'Ä', 'ä', 'Ü', 'ü', 'Ö', 'ö']
+
+        for refactor_letter, umlaut_code in zip(refactor_letters, umlaut_codes):
+            if word.find(umlaut_code) != -1:
+                word = self.refactor(self.get_all(umlaut_code), refactor_letter)  # refactor the string
+        if word.isalpha() is True:
+            return word
+
+        else:
+            new_word = ''
+            for letter in list(word):
+                if letter.isascii() is True:
+                    new_word += letter
+                else:
+                    print('put letter: ', letter, ' away from string')
+                    new_word += ''
+            return new_word
+
     def get_all(self, umlaut_code):
         """
 
@@ -71,6 +91,38 @@ class Encode_umlauts:
     def encode(self):
         """
 
+        :return: the new encoded words with the right umlauts
+        """
+
+        single_words = self.string.split()
+        new_string = ''
+
+        for counter, word in enumerate(single_words):
+            if word.isascii() is True:
+                if counter > 0:
+                    if (single_words[counter - 1].find('/') == -1 and single_words[counter - 1].find('\\') == -1) \
+                            or (single_words[counter - 1].find('/') != 0 and single_words[counter - 1].find('\\') != 0):
+                        new_string += ' ' + word
+                    else:
+                        new_string += word
+                else:
+                    new_string += word
+            else:
+                if counter > 0:
+                    if (single_words[counter - 1].find('/') == -1 and single_words[counter - 1].find('\\') == -1) \
+                            or (single_words[counter - 1].find('\\') != 0 and single_words[counter - 1].find('/') != 0):
+                        new_string += ' ' + self.rebuild(word)
+                    else:
+                        new_string += self.rebuild(word)
+                else:
+                    new_string += self.rebuild(word)
+
+        self.string = new_string
+
+        return self.string
+
+    def headless_encode(self):
+        """
         :return: the new encoded words with the right umlauts
         """
         umlaut_codes = ['ÃŸ', 'Ã„', 'Ã¤', 'Ãœ', 'Ã¼', 'Ã–', 'Ã¶', 'Ae', 'ae', 'Ue', 'ue', 'Oe', 'oe']
