@@ -23,8 +23,8 @@
 """
 
 __date__ = '09.07.2021'
-__completed__ = '13.07.2021'
-__work_time__ = 'about 2 Hours'
+__completed__ = '10.08.2021'
+__work_time__ = 'about 4 Hours'
 __author__ = 'Christof Haidegger'
 __version__ = '1.0'
 __licence__ = 'Common Licence'
