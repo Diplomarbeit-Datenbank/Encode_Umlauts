@@ -139,7 +139,6 @@ class Encode_umlauts:
             for refactor_letter, umlaut_code in zip(refactor_letters, umlaut_codes):
                 if word.find(umlaut_code) != -1:
                     word = self.refactor(self.get_all(umlaut_code), refactor_letter)  # refactor the string
-                    print(word)
                     single_words[counter] = word
 
         self.string = ' '.join(single_words)
