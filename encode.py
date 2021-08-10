@@ -125,12 +125,24 @@ class Encode_umlauts:
         """
         :return: the new encoded words with the right umlauts
         """
+
+        exception_words = ['Bergbauernbuam', 'Queens']
         umlaut_codes = ['ÃŸ', 'Ã„', 'Ã¤', 'Ãœ', 'Ã¼', 'Ã–', 'Ã¶', 'Ae', 'ae', 'Ue', 'ue', 'Oe', 'oe']
         refactor_letters = ['ß', 'Ä', 'ä', 'Ü', 'ü', 'Ö', 'ö', 'Ä', 'ä', 'Ü', 'ü', 'Ö', 'ö']
-        for refactor_letter, umlaut_code in zip(refactor_letters, umlaut_codes):
-            if self.string.find(umlaut_code) != -1:
-                self.string = self.refactor(self.get_all(umlaut_code), refactor_letter)  # refactor the string
 
+        single_words = self.string.split()
+
+        for counter, word in enumerate(single_words):
+            self.string = word
+            if word in exception_words:
+                continue
+            for refactor_letter, umlaut_code in zip(refactor_letters, umlaut_codes):
+                if word.find(umlaut_code) != -1:
+                    word = self.refactor(self.get_all(umlaut_code), refactor_letter)  # refactor the string
+                    print(word)
+                    single_words[counter] = word
+
+        self.string = ' '.join(single_words)
         return self.string
 
 
