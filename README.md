@@ -7,7 +7,7 @@ Eine Library, um Umlaute aus einem Textfile richtig auszulesen
 
 ## Funktionen:
     o Richtiges einlesen von Umlauten in einem Textdokument
-    o Einfache inplementierung in eigenen Code durch encode() Funktion
+    o Einfache Implementierung in eigenen Code durch encode() Funktion
     o Richtiges anzeigen von Umlauten und nicht ä = ae
 
 
