@@ -1,5 +1,6 @@
 # Encode_Umlauts
-![image](https://user-images.githubusercontent.com/87471423/127839447-7370c716-d61e-472e-a278-27cf95b26392.png)
+![image](https://user-images.githubusercontent.com/87471423/129373157-7f3e1ac8-3752-46fc-b7a2-d16ec4f305d8.png)
+
 
 
 Eine Library, um Umlaute aus einem Textfile richtig auszulesen
@@ -15,7 +16,7 @@ Eine Library, um Umlaute aus einem Textfile richtig auszulesen
     o re:  -> Für die einfache Herausfilterung der Umlaute
            -> pip install re
 
-## Verwendung:
+## Entwickler Verwendung:
     -> Einfach starten der main Funktion im File: encode.py und schon hat man ein 
        ausführliches Beispiel der Funktionen parat.
        
@@ -32,3 +33,15 @@ Eine Library, um Umlaute aus einem Textfile richtig auszulesen
         print('with encode: \n', encoded.encode())
 
         return 0
+   
+   
+# Eigenschaften:
+    o Copyright Christof Haidegger
+    o Erstellt von Christof Haidegger
+    o Debugging von Christof Haidegger
+    
+    o Geschriebene Zeilen Python-Code: 164
+    o Geschriebene Zeilen README-Code: 47
+    
+   
+    
